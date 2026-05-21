@@ -12,7 +12,7 @@
 
     :root {
       --sage:       #7A9E7E;
-      --sage-light: #A8C5AC
+      --sage-light: #A8C5AC;
       --sage-pale:  #EAF2EB;
       --sage-dark:  #4E7354;
       --off-white:  #F5F7F5;
@@ -85,10 +85,15 @@
       font-size: 0.9rem;
       font-weight: 500;
       color: var(--mid);
-      transition: color 0.2s;
+      padding: 6px 14px;
+      border-radius: 50px;
+      transition: color 0.2s, background 0.2s;
     }
 
-    .nav-links a:hover { color: var(--sage-dark); }
+    .nav-links a:hover {
+      color: var(--sage-dark);
+      background: rgba(134, 188, 155, 0.18);
+    }
 
     .nav-cta {
       background: var(--charcoal);
@@ -1093,22 +1098,22 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Nieuw: VIZZER Ouderbijdragen 3.0 — nu met automatische incasso
+          Gespecialiseerd platform voor activiteitenfinanciering op scholen
         </div>
         <h1 class="hero-title">
-          Ouderbijdragen regelen,<br /><span>zonder gedoe</span>
+          Activiteiten op school<br /><span>van bijdrage tot begroting</span>
         </h1>
         <p class="hero-desc">
-          VIZZER Ouderbijdragen is de app waarmee schoolbesturen moeiteloos
-          de vrijwillige ouderbijdrage innen — voor schoolreizen, excursies en
-          activiteiten. Transparant voor ouders, eenvoudig voor scholen.
+          VIZZER helpt scholen bij het organiseren en financieren van activiteiten —
+          van bijdragen van ouders tot sponsoren en bedrijven. Wij kennen dit vraagstuk
+          door en door, en denken mee ook als jouw situatie buiten de standaardoplossing valt.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Demo aanvragen</a>
           <a href="#producten" class="btn-secondary">Hoe het werkt →</a>
         </div>
         <ul style="margin-top:20px; display:flex; flex-direction:column; gap:8px; list-style:none; padding:0;">
-          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--mid);"><span style="width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0;"></span>Reguliere ouderbijdrage</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--mid);"><span style="width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0;"></span>Schoolactiviteiten financiering</li>
           <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--mid);"><span style="width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0;"></span>Excursies &amp; schoolreizen</li>
           <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--mid);"><span style="width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0;"></span>Borgbetalingen</li>
           <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--mid);"><span style="width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0;"></span>Sponsoring</li>
@@ -1119,7 +1124,7 @@
       <div class="hero-visual">
         <div class="hero-card-main">
           <div class="dash-header">
-            <span class="dash-title">Ouderbijdragen overzicht</span>
+            <span class="dash-title">Activiteiten overzicht</span>
             <span class="dash-badge">Live data</span>
           </div>
           <div class="dash-metrics">
@@ -1177,19 +1182,34 @@
   <!-- PRODUCTEN -->
   <section id="producten">
     <div class="section-inner">
-      <span class="section-label">Onze producten</span>
-      <h2 class="section-title">Ouderbijdragen beheren was nog nooit zo eenvoudig</h2>
-      <p class="section-subtitle">Van het aanmaken van activiteiten tot automatische incasso en realtime rapportage — VIZZER regelt het van A tot Z voor uw schoolbestuur.</p>
+      <span class="section-label">Ons platform</span>
+      <h2 class="section-title">Activiteitenfinanciering als specialisme</h2>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px;">
+        <span style="display:inline-flex; align-items:center; gap:10px; background:var(--sage-pale); border:1.5px solid var(--sage-light); border-radius:50px; padding:10px 22px; font-size:1rem; font-weight:700; color:var(--sage-dark);">
+          <span style="width:12px; height:12px; background:var(--sage); border-radius:50%; flex-shrink:0;"></span>Primair onderwijs
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:10px; background:var(--sage-pale); border:1.5px solid var(--sage-light); border-radius:50px; padding:10px 22px; font-size:1rem; font-weight:700; color:var(--sage-dark);">
+          <span style="width:12px; height:12px; background:var(--sage); border-radius:50%; flex-shrink:0;"></span>Voortgezet onderwijs
+        </span>
+      </div>
+      <p class="section-subtitle">Wij bouwen uitsluitend voor dit vraagstuk. Dat betekent diepgang waar generieke software ophoudt — en de ruimte om mee te bewegen met scholen die het anders aanpakken.</p>
 
       <!-- VIZZER Ouderbijdragen - enkel product -->
       <div style="background: linear-gradient(135deg, var(--charcoal) 0%, #2E4A32 100%); border-radius: var(--radius-lg); padding: 56px 56px 48px; display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:center;">
         <!-- Links: tekst -->
         <div>
           <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(168,197,172,0.2); border:1px solid rgba(168,197,172,0.3); border-radius:50px; padding:5px 14px; font-size:0.75rem; font-weight:600; color:var(--sage-light); margin-bottom:18px;">⭐ Vlaggenschip product</div>
-          <div style="font-size:2rem; font-weight:800; color:white; letter-spacing:-0.5px; margin-bottom:14px; line-height:1.2;">VIZZER<br/>Ouderbijdragen</div>
-          <p style="font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.75; margin-bottom:28px;">De complete app voor schoolbesturen om de vrijwillige ouderbijdrage digitaal te beheren. Ouders betalen via de app, u behoudt het overzicht. Altijd transparant, altijd compliant met de wet.</p>
+          <div style="font-size:2rem; font-weight:800; color:white; letter-spacing:-0.5px; margin-bottom:14px; line-height:1.2;">VIZZER<br/>Schoolactiviteiten Financiering</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); border-radius:50px; padding:5px 14px; font-size:0.75rem; font-weight:600; color:rgba(255,255,255,0.8);">🏫 Primair onderwijs</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); border-radius:50px; padding:5px 14px; font-size:0.75rem; font-weight:600; color:rgba(255,255,255,0.8);">🎓 Voortgezet onderwijs</span>
+          </div>
+          <p style="font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">Sneller en eenvoudiger schoolkosten innen</p>
+          <p style="font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.75; margin-bottom:14px;">Ben je op zoek naar een eenvoudige manier om schoolkosten te innen? Wil je af van het handmatige werk, of wil je ouders meer gemak bieden? Dan is VIZZER het platform voor jouw school, schoolbestuur of oudervereniging.</p>
+          <p style="font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.75; margin-bottom:14px;">VIZZER biedt een omgeving waarmee betaalverzoeken eenvoudig aangemaakt en verstuurd worden naar ouders. Ouders betalen snel en veilig via iDEAL, creditcard of automatische incasso. Je hebt direct inzicht in wie er betaald heeft — handmatig lijstjes bijhouden in Excel is verleden tijd.</p>
+          <p style="font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.75; margin-bottom:28px;">Omdat VIZZER speciaal gebouwd is voor activiteitenfinanciering op scholen, begrijpen wij wat er speelt: van schoolactiviteiten financiering tot excursies, sponsoring en borgbetalingen. Werkt jouw school net iets anders? <span style="color:rgba(255,255,255,0.85); font-weight:500;">Wij denken mee.</span></p>
           <ul style="display:flex; flex-direction:column; gap:10px; list-style:none; padding:0; margin-bottom:36px;">
-            <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:rgba(255,255,255,0.85);"><span style="width:7px;height:7px;background:var(--sage-light);border-radius:50%;flex-shrink:0;"></span>Reguliere ouderbijdrage</li>
+            <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:rgba(255,255,255,0.85);"><span style="width:7px;height:7px;background:var(--sage-light);border-radius:50%;flex-shrink:0;"></span>Schoolactiviteiten financiering</li>
             <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:rgba(255,255,255,0.85);"><span style="width:7px;height:7px;background:var(--sage-light);border-radius:50%;flex-shrink:0;"></span>Excursies &amp; schoolreizen</li>
             <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:rgba(255,255,255,0.85);"><span style="width:7px;height:7px;background:var(--sage-light);border-radius:50%;flex-shrink:0;"></span>Borgbetalingen</li>
             <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:rgba(255,255,255,0.85);"><span style="width:7px;height:7px;background:var(--sage-light);border-radius:50%;flex-shrink:0;"></span>Sponsoring</li>
@@ -1234,23 +1254,67 @@
     </div>
   </section>
 
+  <!-- MARKT IN BEWEGING -->
+  <section style="background: var(--charcoal); padding: 100px 48px;">
+    <div class="section-inner">
+      <span style="display:inline-block; font-size:0.78rem; font-weight:600; color:var(--sage-light); text-transform:uppercase; letter-spacing:0.1em; background:rgba(168,197,172,0.15); padding:5px 14px; border-radius:50px; margin-bottom:16px;">De markt is in beweging</span>
+      <h2 style="font-size:clamp(2rem, 3.5vw, 2.8rem); font-weight:800; letter-spacing:-1px; color:var(--white); line-height:1.2; margin-bottom:14px; max-width:700px;">De maatschappelijke druk op schoolkosten is structureel, niet tijdelijk</h2>
+      <p style="font-size:1.05rem; color:rgba(255,255,255,0.55); max-width:600px; line-height:1.7; margin-bottom:52px;">Scholen staan onder druk. Ouders ook. En de roep om transparantie en toegankelijkheid wordt alleen maar groter.</p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:52px;">
+
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-md); padding:28px; display:flex; flex-direction:column; gap:14px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(168,197,172,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--sage-light); background:rgba(168,197,172,0.15); padding:3px 10px; border-radius:50px; align-self:flex-start;">VO-raad</span>
+          <p style="font-size:0.95rem; font-weight:600; color:var(--white); line-height:1.5;">"Alle schoolkosten afgeschaft op Praktijkschool De Brug"</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-md); padding:28px; display:flex; flex-direction:column; gap:14px;" onmouseover="this.style.borderColor='rgba(168,197,172,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--sage-light); background:rgba(168,197,172,0.15); padding:3px 10px; border-radius:50px; align-self:flex-start;">WOS</span>
+          <p style="font-size:0.95rem; font-weight:600; color:var(--white); line-height:1.5;">"Ouderbijdrage weer gestegen: 'We slaan het schoolreisje een jaartje over'"</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-md); padding:28px; display:flex; flex-direction:column; gap:14px;" onmouseover="this.style.borderColor='rgba(168,197,172,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--sage-light); background:rgba(168,197,172,0.15); padding:3px 10px; border-radius:50px; align-self:flex-start;">EO</span>
+          <p style="font-size:0.95rem; font-weight:600; color:var(--white); line-height:1.5;">"Ouders bezorgd over hoge schoolkosten, roep om afschaffen vrijwillige bijdrage"</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-md); padding:28px; display:flex; flex-direction:column; gap:14px;" onmouseover="this.style.borderColor='rgba(168,197,172,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--sage-light); background:rgba(168,197,172,0.15); padding:3px 10px; border-radius:50px; align-self:flex-start;">NOS</span>
+          <p style="font-size:0.95rem; font-weight:600; color:var(--white); line-height:1.5;">"Eerste kinderen op schoolreisje uit Utrechts solidariteitsfonds"</p>
+        </div>
+
+      </div>
+
+      <div style="background:rgba(168,197,172,0.1); border:1px solid rgba(168,197,172,0.25); border-radius:var(--radius-lg); padding:40px 48px; display:flex; align-items:flex-start; gap:24px;">
+        <div style="width:48px; height:48px; background:var(--sage); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; margin-top:2px;">🏗️</div>
+        <div>
+          <p style="font-size:1.05rem; font-weight:600; color:var(--white); line-height:1.65; margin-bottom:10px;">Scholen zoeken nieuwe manieren om activiteiten te financieren — via ouders, sponsors én bedrijven.</p>
+          <p style="font-size:0.95rem; color:rgba(255,255,255,0.6); line-height:1.7;">Vizzer is gebouwd om dat mogelijk te maken. Als gespecialiseerd bedrijf kunnen we snel meedenken en meebouwen met wat een school nodig heeft.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- OVER ONS -->
   <section id="over-ons">
     <div class="section-inner">
       <div class="about-grid">
         <div class="about-visual" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:stretch;">
-          <div style="border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-md);">
-            <img src="foto1.png" alt="VIZZER team" style="width:100%; height:100%; object-fit:cover; opacity:0.75; display:block;" />
+          <div style="border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-md); grid-column: span 2;">
+            <img src="foto2.png" alt="VIZZER team" style="width:100%; height:220px; object-fit:cover; opacity:0.75; display:block;" />
           </div>
           <div style="border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-sm);">
-            <img src="foto3.png" alt="VIZZER onderwijs" style="width:100%; height:100%; object-fit:cover; opacity:0.75; display:block;" />
+            <img src="foto3.png" alt="VIZZER onderwijs" style="width:100%; height:180px; object-fit:cover; opacity:0.75; display:block;" />
+          </div>
+          <div style="border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-sm);">
+            <img src="foto4.jpg" alt="VIZZER onderwijs" style="width:100%; height:180px; object-fit:cover; opacity:0.75; display:block;" />
           </div>
         </div>
 
         <div class="about-content">
           <span class="section-label">Over VIZZER</span>
-          <h2 class="section-title">Gebouwd door en voor het onderwijs</h2>
-          <p class="section-subtitle">VIZZER is opgericht door onderwijsprofessionals en technologen met één doel: het werk van onderwijsbesturen eenvoudiger, transparanter en effectiever maken.</p>
+          <h2 class="section-title">Gebouwd voor dit vraagstuk</h2>
+          <p class="section-subtitle">VIZZER is een gespecialiseerd platform voor activiteitenfinanciering op scholen. Onze geloofwaardigheid zit in onze focus: wij kennen dit domein door en door, en denken mee ook buiten de gebaande paden.</p>
           <ul class="about-points">
             <li class="about-point">
               <div class="point-icon">🎯</div>
@@ -1276,8 +1340,8 @@
             <li class="about-point">
               <div class="point-icon">🔄</div>
               <div class="point-text">
-                <strong>Continue innovatie</strong>
-                <p>Onze productroadmap wordt mede bepaald door onze klanten. Uw wensen worden serieus genomen en omgezet in nieuwe functies.</p>
+                <strong>Meebewegen met uw school</strong>
+                <p>Elke school werkt anders. Wij denken mee — of het nu gaat om een afwijkend proces, een eigen administratiestructuur of een situatie die buiten de standaardoplossing valt.</p>
               </div>
             </li>
           </ul>
@@ -1332,8 +1396,8 @@
   <div class="cta-section">
     <div class="cta-inner">
       <div class="cta-text">
-        <h2>Klaar om uw bestuur te versterken?</h2>
-        <p>Vraag een vrijblijvende demo aan en ontdek hoe VIZZER uw organisatie kan transformeren.</p>
+        <h2>Benieuwd hoe wij dit aanpakken voor uw school?</h2>
+        <p>Geen standaard pitch, maar een gesprek over uw specifieke situatie — ook als die buiten de standaardoplossing valt.</p>
       </div>
       <div class="cta-actions">
         <a href="#contact" class="btn-sage">Demo aanvragen</a>
@@ -1347,7 +1411,7 @@
     <div class="section-inner">
       <span class="section-label">Contact</span>
       <h2 class="section-title">Neem contact op</h2>
-      <p class="section-subtitle">Wil je meer weten over VIZZER? We staan klaar om al uw vragen te beantwoorden en een demo in te plannen.</p>
+      <p class="section-subtitle">Wil je meer weten over hoe VIZZER werkt voor jouw school? We denken graag mee, ook als jouw situatie niet standaard is.</p>
 
       <div class="contact-grid">
         <div class="contact-info">
@@ -1381,8 +1445,8 @@
           </div>
 
           <div style="margin-top: 16px; background: var(--sage-pale); border-radius: var(--radius-md); padding: 24px;">
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--charcoal); margin-bottom: 6px;">💡 Wist u dat?</div>
-            <p style="font-size: 0.82rem; color: var(--mid); line-height: 1.6;">Gemiddeld besparen VIZZER-klanten <strong style="color: var(--sage-dark);">16 uur per week</strong> op administratieve taken per school.</p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--charcoal); margin-bottom: 6px;">💡 Waarom specialisatie telt</div>
+            <p style="font-size: 0.82rem; color: var(--mid); line-height: 1.6;">Activiteitenfinanciering raakt elk schooljaar honderden leerlingen per school — en toch ontbreekt in de meeste systemen de specifieke ondersteuning hiervoor. <strong style="color: var(--sage-dark);">VIZZER vult precies die leemte.</strong></p>
           </div>
         </div>
 
@@ -1417,7 +1481,7 @@
               <label for="interesse">Interesse in</label>
               <select id="interesse" name="interesse">
                 <option value="">Selecteer een product</option>
-                <option>VIZZER Ouderbijdragen</option>
+                <option>VIZZER Schoolactiviteiten Financiering</option>
                 <option>Volledig platform</option>
               </select>
             </div>
@@ -1497,7 +1561,7 @@
           <a href="#home" class="nav-logo" style="margin-bottom:0">
             <img src="vizzer-logo.png" alt="VIZZER" style="display:block; height:44px; width:auto;" />
           </a>
-          <p>Slimme software die onderwijsbesturen in Nederland helpt efficiënter, transparanter en effectiever te werken.</p>
+          <p>Het gespecialiseerde platform voor activiteitenfinanciering op scholen in Nederland — van schoolactiviteiten financiering tot sponsoring.</p>
         </div>
 <div class="footer-col">
           <h4>Bedrijf</h4>
