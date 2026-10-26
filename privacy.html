@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacyverklaring – VIZZER</title>
+  <meta name="description" content="Hoe VIZZER omgaat met persoonsgegevens van bezoekers van vizzer.nl: welke gegevens we verzamelen, waarom, hoe lang we ze bewaren en welke rechten u heeft." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage:       #7A9E7E;
+      --sage-light: #A8C5AC;
+      --sage-pale:  #EAF2EB;
+      --sage-dark:  #4E7354;
+      --off-white:  #F5F7F5;
+      --white:      #FFFFFF;
+      --charcoal:   #1C2B1E;
+      --mid:        #4A5E4D;
+      --muted:      #8A9E8D;
+      --border:     rgba(122,158,126,0.18);
+      --glass-bg:   rgba(255,255,255,0.72);
+      --glass-blur: blur(18px);
+      --radius-sm:  10px;
+      --radius-md:  18px;
+      --radius-lg:  28px;
+      --shadow-sm:  0 2px 12px rgba(78,115,84,0.08);
+      --shadow-md:  0 8px 32px rgba(78,115,84,0.12);
+      --shadow-lg:  0 20px 60px rgba(78,115,84,0.16);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--charcoal);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 48px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--mid);
+      padding: 6px 14px;
+      border-radius: 50px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-dark);
+      background: rgba(134,188,155,0.18);
+    }
+
+    .nav-cta {
+      background: var(--charcoal);
+      color: var(--white) !important;
+      padding: 10px 22px !important;
+      border-radius: 50px;
+      font-size: 0.875rem !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--sage-dark) !important;
+    }
+
+    /* HERO */
+    .page-hero {
+      padding: 140px 48px 64px;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(168,197,172,0.3) 0%, transparent 65%),
+        var(--off-white);
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--sage-dark);
+      background: var(--sage-pale);
+      border: 1px solid var(--sage-light);
+      border-radius: 50px;
+      padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: var(--mid);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    .page-hero .updated {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    /* LAYOUT */
+    .privacy-section {
+      padding: 24px 48px 110px;
+    }
+
+    .privacy-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* TOC */
+    .toc {
+      position: sticky;
+      top: 100px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .toc h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .toc li {
+      counter-increment: toc;
+    }
+
+    .toc a {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--mid);
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sage);
+      min-width: 20px;
+    }
+
+    .toc a:hover {
+      color: var(--sage-dark);
+      background: var(--sage-pale);
+    }
+
+    /* CONTENT */
+    .privacy-content {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 56px 64px;
+    }
+
+    .summary {
+      background: var(--sage-pale);
+      border: 1px solid var(--sage-light);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .summary h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sage-dark);
+      margin-bottom: 12px;
+    }
+
+    .summary ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .summary li {
+      position: relative;
+      padding-left: 26px;
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .summary li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 800;
+      color: var(--sage-dark);
+    }
+
+    .privacy-content article + article {
+      margin-top: 44px;
+      padding-top: 44px;
+      border-top: 1px solid var(--border);
+    }
+
+    .privacy-content h2.heading {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+
+    .privacy-content h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin: 26px 0 8px;
+    }
+
+    .privacy-content p {
+      font-size: 0.97rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    .privacy-content p + p { margin-top: 12px; }
+
+    .privacy-content ul {
+      margin: 12px 0 0 0;
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .privacy-content ul li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .privacy-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage-light);
+    }
+
+    .privacy-content a {
+      color: var(--sage-dark);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage-light);
+    }
+
+    .privacy-content a:hover {
+      border-bottom-color: var(--sage-dark);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    .data-table th,
+    .data-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .data-table th {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: var(--off-white);
+    }
+
+    .data-table td:first-child {
+      font-weight: 600;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    .contact-card {
+      margin-top: 20px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .contact-card strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .contact-card span {
+      font-size: 0.95rem;
+      color: var(--mid);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 48px;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--sage-light);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .privacy-layout { grid-template-columns: 1fr; gap: 28px; }
+      .toc { position: static; }
+      .privacy-content { padding: 40px 32px; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .page-hero { padding: 120px 20px 48px; }
+      .privacy-section { padding: 16px 20px 80px; }
+      .privacy-content { padding: 32px 22px; border-radius: var(--radius-md); }
+      .data-table td:first-child { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="vizzer-logo.png" alt="VIZZER" height="48" style="display:block; height:48px; width:auto;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#producten">Producten</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="index.html#samenwerkingen">Samenwerkingen</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <span class="section-label">Privacy</span>
+    <h1>Privacyverklaring</h1>
+    <p>VIZZER werkt voor en met het onderwijs. Zorgvuldig omgaan met persoonsgegevens is daarom geen bijzaak, maar de basis. Op deze pagina leest u welke gegevens we via deze website verzamelen, waarom, en wat uw rechten zijn.</p>
+    <span class="updated">Laatst bijgewerkt: 26 oktober 2026</span>
+  </div>
+
+  <!-- CONTENT -->
+  <section class="privacy-section">
+    <div class="privacy-layout">
+
+      <!-- TOC -->
+      <aside class="toc">
+        <h2>Inhoud</h2>
+        <ol>
+          <li><a href="#wie-zijn-we">Wie zijn we</a></li>
+          <li><a href="#gegevens">Welke gegevens we verzamelen</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#derden">Diensten van derden</a></li>
+          <li><a href="#links">Links naar andere websites</a></li>
+          <li><a href="#delen">Met wie we gegevens delen</a></li>
+          <li><a href="#bewaren">Hoe lang we gegevens bewaren</a></li>
+          <li><a href="#beveiliging">Beveiliging</a></li>
+          <li><a href="#rechten">Uw rechten</a></li>
+          <li><a href="#wijzigingen">Wijzigingen</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </aside>
+
+      <!-- TEXT -->
+      <div class="privacy-content">
+
+        <div class="summary">
+          <h2>In het kort</h2>
+          <ul>
+            <li>We verzamelen alleen de gegevens die u zelf invult in het contactformulier, of die u ons per mail of telefoon geeft.</li>
+            <li>Deze website gebruikt geen trackingcookies en geen analysesoftware zoals Google Analytics.</li>
+            <li>We verkopen uw gegevens nooit en delen ze alleen met partijen die nodig zijn om de website en het contactformulier te laten werken.</li>
+            <li>U kunt altijd inzage, correctie of verwijdering van uw gegevens vragen via <a href="mailto:info@vizzer.nl">info@vizzer.nl</a>.</li>
+          </ul>
+        </div>
+
+        <article id="wie-zijn-we">
+          <h2 class="heading">1. Wie zijn we</h2>
+          <p>VIZZER B.V. is een softwarebedrijf dat scholen en onderwijsbesturen helpt bij het financieren van schoolactiviteiten. Wij werken dagelijks met gegevens van scholen, ouders en leerlingen en weten daardoor goed hoe waardevol en kwetsbaar persoonsgegevens zijn. Daarom verwerken wij deze altijd op een veilige en zorgvuldige manier en houden wij ons aan de Algemene verordening gegevensbescherming (AVG).</p>
+          <p>Ons websiteadres is <a href="https://www.vizzer.nl">https://www.vizzer.nl</a>. VIZZER B.V. is de verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verzameld. Deze verklaring gaat over de website. Voor het gebruik van het VIZZER platform door scholen gelden aparte afspraken, die met de school worden vastgelegd.</p>
+        </article>
+
+        <article id="gegevens">
+          <h2 class="heading">2. Welke persoonsgegevens we verzamelen en waarom</h2>
+
+          <h3>Contactformulier</h3>
+          <p>Op de contactpagina kunt u een demo aanvragen of een vraag stellen. Daarbij vragen wij om uw voornaam, achternaam, organisatie of onderwijsbestuur, e-mailadres, eventueel uw telefoonnummer, het product waarin u interesse heeft en uw bericht. Wij gebruiken deze gegevens om uw vraag te beantwoorden, een demo in te plannen en om bij vervolgcontact terug te kunnen kijken naar eerdere vragen, zodat we u zo goed mogelijk kunnen helpen.</p>
+          <p>De grondslag hiervoor is de uitvoering van een overeenkomst of het nemen van stappen daaraan voorafgaand, en ons gerechtvaardigd belang om vragen van bezoekers te beantwoorden.</p>
+
+          <h3>E-mail en telefoon</h3>
+          <p>Als u ons mailt of belt, bewaren wij de correspondentie en de contactgegevens die u ons geeft, zodat we uw vraag kunnen afhandelen en later kunnen terugvinden wat er is afgesproken.</p>
+
+          <h3>Klanten en partners</h3>
+          <p>Bent u klant of partner van VIZZER, dan tonen wij die samenwerking graag. Dat doen we door uw logo en organisatienaam op te nemen in onze klanten- en partnergalerij op de website en op social media. Ook kan uw naam, en met uw toestemming uw beeltenis, voorkomen in een nieuwsbericht of referentie op onze website. Dit gebeurt altijd in overleg en u kunt dit op elk moment laten aanpassen of verwijderen.</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Gegevens</th>
+                <th>Waarom</th>
+                <th>Bewaartermijn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Naam, organisatie, e-mail, telefoon, bericht</td>
+                <td>Beantwoorden van uw vraag of demoaanvraag en vervolgcontact</td>
+                <td>Maximaal 2 jaar na het laatste contact, tenzij er een klantrelatie ontstaat</td>
+              </tr>
+              <tr>
+                <td>Logo en organisatienaam</td>
+                <td>Tonen van klant- en partnerrelaties</td>
+                <td>Zolang de samenwerking duurt, of tot u om verwijdering vraagt</td>
+              </tr>
+              <tr>
+                <td>Technische gegevens (IP-adres)</td>
+                <td>Technisch noodzakelijk voor het laden van de website</td>
+                <td>Alleen tijdens het bezoek, zie <a href="#derden">diensten van derden</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article id="cookies">
+          <h2 class="heading">3. Cookies</h2>
+          <p>Deze website plaatst geen trackingcookies, geen advertentiecookies en geen analytische cookies. Er is dan ook geen cookiemelding nodig. Mochten wij in de toekomst wel cookies gaan gebruiken die niet strikt noodzakelijk zijn, dan vragen wij u daar eerst om toestemming en passen wij deze verklaring aan.</p>
+          <p>Wij maken ook geen gebruik van analysesoftware zoals Google Analytics. We volgen niet welke pagina's u bezoekt of hoe lang u op de website blijft.</p>
+        </article>
+
+        <article id="derden">
+          <h2 class="heading">4. Diensten van derden op deze website</h2>
+
+          <h3>Contactformulier via Formspree</h3>
+          <p>Het contactformulier wordt technisch afgehandeld door Formspree, een dienst die formulierinzendingen doorstuurt naar ons e-mailadres. Formspree verwerkt daarbij de gegevens die u invult, in opdracht van VIZZER. Formspree is gevestigd in de Verenigde Staten; de doorgifte vindt plaats op basis van de daarvoor geldende waarborgen. Meer informatie vindt u in de <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">privacyverklaring van Formspree</a>.</p>
+
+          <h3>Lettertypen van Google Fonts</h3>
+          <p>Voor de weergave van tekst laadt deze website het lettertype Inter via Google Fonts. Bij het laden van de pagina wordt daarvoor uw IP-adres naar servers van Google gestuurd. Google kan deze gegevens verwerken volgens zijn eigen <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacybeleid</a>. Er worden hierbij geen cookies geplaatst.</p>
+
+          <h3>Ingesloten inhoud</h3>
+          <p>Video's en afbeeldingen op deze website worden door onszelf gehost. Wij sluiten op dit moment geen inhoud in van andere websites, zoals YouTube of social media. Zou dat veranderen, dan geldt dat ingesloten inhoud van een andere website zich gedraagt alsof u die website zelf bezoekt: die partij kan dan gegevens over u verzamelen en cookies plaatsen volgens haar eigen privacybeleid.</p>
+        </article>
+
+        <article id="links">
+          <h2 class="heading">5. Links naar andere websites</h2>
+          <p>Op onze website wordt op verschillende plekken gelinkt naar andere websites. VIZZER is niet verantwoordelijk voor de manier waarop die organisaties met uw gegevens omgaan. Op die websites gelden de eigen privacyregels van de betreffende organisatie. Lees daarom de privacyverklaring van de website die u bezoekt goed door.</p>
+        </article>
+
+        <article id="delen">
+          <h2 class="heading">6. Met wie we uw gegevens delen</h2>
+          <p>De gegevens die wij via deze website verzamelen gebruiken we alleen zelf, om uw vraag te beantwoorden en de website goed te laten werken. Wij verkopen uw gegevens nooit aan derden en gebruiken ze niet voor advertenties.</p>
+          <p>Wij delen gegevens alleen met partijen die nodig zijn om de website en het contactformulier te laten werken, zoals onze hostingpartij en Formspree. Met deze partijen maken wij afspraken over de bescherming van uw gegevens. Daarnaast kunnen wij gegevens verstrekken als wij daartoe wettelijk verplicht zijn.</p>
+        </article>
+
+        <article id="bewaren">
+          <h2 class="heading">7. Hoe lang we uw gegevens bewaren</h2>
+          <p>Wij bewaren uw gegevens niet langer dan nodig is voor het doel waarvoor we ze hebben ontvangen. Gegevens uit het contactformulier en correspondentie bewaren wij maximaal twee jaar na het laatste contact. Wordt u klant van VIZZER, dan bewaren wij uw gegevens zolang de klantrelatie duurt en daarna zo lang als de wet dat van ons vraagt, bijvoorbeeld voor de fiscale bewaarplicht.</p>
+          <p>Logo's en namen van klanten en partners tonen wij zolang de samenwerking duurt, of totdat u vraagt om verwijdering.</p>
+        </article>
+
+        <article id="beveiliging">
+          <h2 class="heading">8. Beveiliging</h2>
+          <p>Wij nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen tegen verlies, misbruik en onbevoegde toegang. De verbinding met deze website is versleuteld (https) en alleen medewerkers die dat voor hun werk nodig hebben, hebben toegang tot de gegevens uit het contactformulier.</p>
+        </article>
+
+        <article id="rechten">
+          <h2 class="heading">9. Uw rechten</h2>
+          <p>U heeft op grond van de AVG een aantal rechten met betrekking tot uw persoonsgegevens. U kunt ons vragen om:</p>
+          <ul>
+            <li>inzage in de gegevens die wij van u hebben;</li>
+            <li>correctie van gegevens die onjuist of onvolledig zijn;</li>
+            <li>verwijdering van uw gegevens;</li>
+            <li>beperking van de verwerking of bezwaar tegen de verwerking;</li>
+            <li>een exportbestand van de gegevens die u aan ons heeft verstrekt (dataportabiliteit).</li>
+          </ul>
+          <p>Een verzoek kunt u sturen naar <a href="mailto:info@vizzer.nl">info@vizzer.nl</a>. Wij reageren binnen een maand. Om zeker te weten dat het verzoek van u afkomstig is, kunnen wij u vragen zich te identificeren. Gegevens die wij wettelijk verplicht zijn te bewaren, bijvoorbeeld voor administratieve of beveiligingsdoeleinden, kunnen wij niet verwijderen.</p>
+          <p>Bent u niet tevreden over de manier waarop wij met uw gegevens omgaan? Dan horen wij dat graag. U heeft daarnaast altijd het recht een klacht in te dienen bij de <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+        </article>
+
+        <article id="wijzigingen">
+          <h2 class="heading">10. Wijzigingen in deze verklaring</h2>
+          <p>Wij kunnen deze privacyverklaring aanpassen, bijvoorbeeld als de website verandert of als wetgeving dat vraagt. De meest actuele versie staat altijd op deze pagina. Bovenaan ziet u wanneer de verklaring voor het laatst is bijgewerkt.</p>
+        </article>
+
+        <article id="contact">
+          <h2 class="heading">11. Contactinformatie</h2>
+          <p>Heeft u vragen over deze privacyverklaring of over hoe wij met uw gegevens omgaan? Neem dan contact met ons op.</p>
+          <div class="contact-card">
+            <strong>VIZZER B.V.</strong>
+            <span>Velserstraat 26</span>
+            <span>2023 EC Haarlem</span>
+            <span><a href="mailto:info@vizzer.nl">info@vizzer.nl</a></span>
+            <span><a href="tel:0653557754">06 53 55 77 54</a></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 VIZZER B.V. Alle rechten voorbehouden. <a href="index.html">Terug naar home</a></p>
+  </footer>
+
+</body>
+</html>
