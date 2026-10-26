@@ -1035,6 +1035,216 @@
 
     .footer-legal a:hover { color: var(--sage-light); }
 
+    /* ─── COOKIE INSTELLINGEN ────────────────────────────── */
+    .cookie-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(28,43,30,0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .cookie-overlay.is-open { display: flex; }
+
+    .cookie-dialog {
+      width: 100%;
+      max-width: 560px;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 36px 40px 32px;
+      position: relative;
+      animation: cookieIn 0.25s ease-out;
+    }
+
+    @keyframes cookieIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .cookie-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 50%;
+      background: var(--off-white);
+      color: var(--mid);
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cookie-close:hover { background: var(--sage-pale); color: var(--sage-dark); }
+
+    .cookie-dialog h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+      padding-right: 40px;
+    }
+
+    .cookie-dialog > p {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .cookie-dialog > p a {
+      color: var(--sage-dark);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage-light);
+    }
+
+    .cookie-option {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .cookie-option:last-of-type { border-bottom: 1px solid var(--border); }
+
+    .cookie-option-text strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .cookie-option-text span {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .cookie-option-text em {
+      display: inline-block;
+      margin-top: 6px;
+      font-style: normal;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: var(--off-white);
+      border-radius: 50px;
+      padding: 2px 10px;
+    }
+
+    .cookie-switch {
+      position: relative;
+      flex-shrink: 0;
+      width: 46px;
+      height: 26px;
+      margin-top: 2px;
+    }
+
+    .cookie-switch input {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .cookie-switch input:disabled { cursor: not-allowed; }
+
+    .cookie-switch .track {
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      background: #D5DED6;
+      transition: background 0.2s;
+      pointer-events: none;
+    }
+
+    .cookie-switch .track::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+      transition: transform 0.2s;
+    }
+
+    .cookie-switch input:checked + .track { background: var(--sage); }
+    .cookie-switch input:checked + .track::after { transform: translateX(20px); }
+    .cookie-switch input:disabled + .track { opacity: 0.55; }
+    .cookie-switch input:focus-visible + .track { outline: 2px solid var(--sage-dark); outline-offset: 2px; }
+
+    .cookie-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .cookie-actions button {
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .cookie-btn-primary {
+      background: var(--charcoal);
+      color: var(--white);
+      border: none;
+    }
+
+    .cookie-btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+
+    .cookie-btn-secondary {
+      background: transparent;
+      color: var(--mid);
+      border: 1px solid var(--border);
+    }
+
+    .cookie-btn-secondary:hover { background: var(--sage-pale); color: var(--sage-dark); }
+
+    .cookie-saved {
+      display: none;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--sage-dark);
+      text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      .cookie-dialog { padding: 28px 22px 24px; border-radius: var(--radius-md); }
+      .cookie-actions button { flex: 1 1 auto; }
+    }
+
     /* ─── RESPONSIVE ─────────────────────────────────────── */
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -1666,12 +1876,139 @@
         <p>© 2025 VIZZER B.V. Alle rechten voorbehouden.</p>
         <div class="footer-legal">
           <a href="privacy.html">Privacybeleid</a>
-          <a href="#">Algemene voorwaarden</a>
-          <a href="privacy.html#cookies">Cookie-instellingen</a>
+          <a href="privacy.html#cookies" id="cookie-settings-link">Cookie-instellingen</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- COOKIE INSTELLINGEN -->
+  <div class="cookie-overlay" id="cookie-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-hidden="true">
+    <div class="cookie-dialog">
+      <button type="button" class="cookie-close" id="cookie-close" aria-label="Sluiten">✕</button>
+      <h2 id="cookie-title">Cookie-instellingen</h2>
+      <p>Deze website gebruikt alleen wat strikt noodzakelijk is om te functioneren. Wij plaatsen geen tracking- of advertentiecookies en meten geen bezoekersgedrag. Hieronder ziet u per categorie wat er wel en niet gebeurt. Meer informatie leest u in ons <a href="privacy.html#cookies">privacybeleid</a>.</p>
+
+      <div class="cookie-option">
+        <div class="cookie-option-text">
+          <strong>Noodzakelijk</strong>
+          <span>Nodig om de website goed te laten werken, zoals het onthouden van de keuze die u hier maakt. Hiervoor is geen toestemming vereist.</span>
+          <em>Altijd aan</em>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" checked disabled aria-label="Noodzakelijk, altijd aan" />
+          <span class="track"></span>
+        </label>
+      </div>
+
+      <div class="cookie-option">
+        <div class="cookie-option-text">
+          <strong>Analytisch</strong>
+          <span>Cookies die meten hoe de website wordt gebruikt, bijvoorbeeld welke pagina's worden bezocht. Wij gebruiken deze op dit moment niet.</span>
+          <em>Niet in gebruik</em>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookie-analytics" aria-label="Analytische cookies toestaan" />
+          <span class="track"></span>
+        </label>
+      </div>
+
+      <div class="cookie-option">
+        <div class="cookie-option-text">
+          <strong>Marketing</strong>
+          <span>Cookies van derden voor advertenties of social media. Wij gebruiken deze op dit moment niet.</span>
+          <em>Niet in gebruik</em>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookie-marketing" aria-label="Marketingcookies toestaan" />
+          <span class="track"></span>
+        </label>
+      </div>
+
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn-secondary" id="cookie-reject">Alleen noodzakelijk</button>
+        <button type="button" class="cookie-btn-primary" id="cookie-save">Voorkeuren opslaan</button>
+      </div>
+      <div class="cookie-saved" id="cookie-saved">✓ Uw voorkeuren zijn opgeslagen</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'vizzer-cookie-voorkeuren';
+      const overlay   = document.getElementById('cookie-overlay');
+      const openLink  = document.getElementById('cookie-settings-link');
+      const closeBtn  = document.getElementById('cookie-close');
+      const saveBtn   = document.getElementById('cookie-save');
+      const rejectBtn = document.getElementById('cookie-reject');
+      const analytics = document.getElementById('cookie-analytics');
+      const marketing = document.getElementById('cookie-marketing');
+      const savedMsg  = document.getElementById('cookie-saved');
+
+      function lees() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) { return null; }
+      }
+
+      function bewaar(voorkeuren) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            noodzakelijk: true,
+            analytisch: !!voorkeuren.analytisch,
+            marketing: !!voorkeuren.marketing,
+            datum: new Date().toISOString()
+          }));
+        } catch (e) { /* opslag niet beschikbaar, keuze geldt dan alleen voor dit bezoek */ }
+      }
+
+      function open(e) {
+        if (e) e.preventDefault();
+        const huidig = lees();
+        analytics.checked = !!(huidig && huidig.analytisch);
+        marketing.checked = !!(huidig && huidig.marketing);
+        savedMsg.style.display = 'none';
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function sluit() {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (openLink) openLink.focus();
+      }
+
+      function slaOp(voorkeuren) {
+        bewaar(voorkeuren);
+        analytics.checked = !!voorkeuren.analytisch;
+        marketing.checked = !!voorkeuren.marketing;
+        savedMsg.style.display = 'block';
+        setTimeout(sluit, 900);
+      }
+
+      if (openLink) openLink.addEventListener('click', open);
+      closeBtn.addEventListener('click', sluit);
+      saveBtn.addEventListener('click', function () {
+        slaOp({ analytisch: analytics.checked, marketing: marketing.checked });
+      });
+      rejectBtn.addEventListener('click', function () {
+        slaOp({ analytisch: false, marketing: false });
+      });
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) sluit();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) sluit();
+      });
+
+      // Open het venster direct als de pagina wordt geladen met #cookie-instellingen
+      if (window.location.hash === '#cookie-instellingen') open();
+    })();
+  </script>
 
 </body>
 </html>
